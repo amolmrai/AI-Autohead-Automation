@@ -5,7 +5,7 @@ global.fetch = fetch;
 // Test configuration
 const TEST_CONFIG = {
   engine : 'gemini',
-  geminiApiKey: "AIzaSyCXUgBORw1CTlOaU7PmeJI1pmo9oEixj4Y",
+  geminiApiKey: "your-gemini-api-key-here", // Replace with your actual Gemini API key
 }; 
 async function suggestWithGemini({ selector, domSnapshot, action }) {
   
