@@ -4,17 +4,14 @@
  * @file This module provides a self-healing action utility for Playwright tests.
  * It uses Gemini AI to suggest new locators if an initial action fails due to a missing element.
  */
-
 // Import custom utilities
 const { getDomSnapshot } = require('../util/dom');
 const { suggestWithGemini } = require('../engines/gemini');
-
 /**
  * Default timeout for Playwright actions when waiting for selectors.
  * @type {number}
  */
 const ACTION_TIMEOUT = 5000;
-
 /**
  * Performs a specified action on an element, with AI-powered self-healing capabilities.
  * If the initial action fails because the element is not found, it captures the current DOM,

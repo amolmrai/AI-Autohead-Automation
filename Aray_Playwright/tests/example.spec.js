@@ -29,17 +29,18 @@ test('Auto-heal test case for Macy\'s Login using Gemini AI', async ({ page }) =
     headless: TEST_CONFIG.headless,
     slowMo: 100 // Add slight delay for better visibility
   });
-  
+  //Get locators from AI
   try {
     const page = await browser.newPage();
     await page.goto(TEST_CONFIG.baseUrl);
     // Step 2: Attempt form actions with self-healing
     await aiHealAction(page,'type','#email',TEST_CONFIG.testEmail,'Entering test email');
-    await aiHealAction(page,'type','wrongPassword',TEST_CONFIG.testPassword,'Entering test password');
-    await aiHealAction(page,'click','wrongLoginBtn',TEST_CONFIG.testPassword,'Clicking login button');
+    await aiHealAction(page,'type','#wrongPassword',TEST_CONFIG.testPassword,'Entering test password');
+    await aiHealAction(page,'click','#wrongLoginBtn',TEST_CONFIG.testPassword,'Clicking login button');
+    
   } finally {
     // Step 3: Clean up
-    await page.waitForTimeout(2000); // Visual verification
+    //await page.waitForTimeout(5000); // Visual verification
     await browser.close();
   }
 });

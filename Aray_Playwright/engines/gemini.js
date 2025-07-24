@@ -5,7 +5,7 @@ global.fetch = fetch;
 // Test configuration
 const TEST_CONFIG = {
   engine : 'gemini',
-  geminiApiKey: "your-gemini-api-key-here", // Replace with your actual Gemini API key
+  geminiApiKey: "AIzaSyCXUgBORw1CTlOaU7PmeJI1pmo9oEixj4Y", // Replace with your actual Gemini API key
 }; 
 async function suggestWithGemini({ selector, domSnapshot, action }) {
   
@@ -15,7 +15,7 @@ async function suggestWithGemini({ selector, domSnapshot, action }) {
     ${JSON.stringify(domSnapshot, null, 2)}
     Give a working selector string only.
 `;
-  const res = await fetch('https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent', {
+  const res = await fetch('https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
